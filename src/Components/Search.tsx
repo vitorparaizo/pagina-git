@@ -1,5 +1,5 @@
 type SearchProps = {
-    loadUser: (userName: String) => Promise<void>;
+    loadUser: (userName: string) => Promise<void>;
 }
 
 import { useState } from "react";
@@ -14,7 +14,9 @@ const Search = ({loadUser} : SearchProps) => {
         <p>Busque Por Um Perfil</p>
         <div>
             <input type="text" 
-            placeholder="digite o nome do usuario"></input>
+            placeholder="digite o nome do usuario"
+            onChange={(e) => setUserName(e.target.value)}
+            />
             <button onClick={() => loadUser(userName)}>
                 <BsSearch/>
             </button>
